@@ -20,7 +20,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     public List<Employee> findAll() {
-        return List.of();
+        return employeeDAO.findAll();
     }
 
     @Override

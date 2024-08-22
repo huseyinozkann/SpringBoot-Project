@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram version="1" name="fleet_management">
+	<entities>
+		<data-source id="mysql8-190a6c92915-5785efa63ee1c8f0">
+			<entity id="1" name="alarm" fq-name="fleet_management.alarm">
+				<path name="fleet_management"/>
+			</entity>
+			<entity id="2" name="fault" fq-name="fleet_management.fault">
+				<path name="fleet_management"/>
+			</entity>
+			<entity id="3" name="gps" fq-name="fleet_management.gps">
+				<path name="fleet_management"/>
+			</entity>
+			<entity id="4" name="owner" fq-name="fleet_management.owner">
+				<path name="fleet_management"/>
+			</entity>
+			<entity id="5" name="vehicle" fq-name="fleet_management.vehicle">
+				<path name="fleet_management"/>
+			</entity>
+		</data-source>
+	</entities>
+	<relations>
+		<relation name="FKt8k6l326vbc4uim9nq1r5ug8g" fq-name="fleet_management.vehicle.FKt8k6l326vbc4uim9nq1r5ug8g" type="fk" pk-ref="4" fk-ref="5"/>
+		<relation name="FKd5om4ttehclrmlkgic1gdfgn6" fq-name="fleet_management.alarm.FKd5om4ttehclrmlkgic1gdfgn6" type="fk" pk-ref="5" fk-ref="1"/>
+		<relation name="FK61x7ub1sh7v58atvh94xghlo" fq-name="fleet_management.fault.FK61x7ub1sh7v58atvh94xghlo" type="fk" pk-ref="5" fk-ref="2"/>
+		<relation name="FKnac3hngadf4mav9tayyi1kgqi" fq-name="fleet_management.gps.FKnac3hngadf4mav9tayyi1kgqi" type="fk" pk-ref="5" fk-ref="3"/>
+	</relations>
+</diagram>

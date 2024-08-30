@@ -18,13 +18,15 @@ public class CustomerController {
     // remove leading and trailing whitespace
     // resolve issue for our validation
     @InitBinder
-    public void initBinder(WebDataBinder dataBinder){
+    public void initBinder(WebDataBinder dataBinder) {
+
         StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
+
         dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
     }
 
     @GetMapping("/")
-    public String showForm(Model theModel){
+    public String showForm(Model theModel) {
 
         theModel.addAttribute("customer", new Customer());
 
@@ -34,9 +36,13 @@ public class CustomerController {
     @PostMapping("/processForm")
     public String processForm(
             @Valid @ModelAttribute("customer") Customer theCustomer,
-            BindingResult theBindingResult){
+            BindingResult theBindingResult) {
 
         System.out.println("Last name: |" + theCustomer.getLastName() + "|");
+
+        System.out.println("Binding results: " + theBindingResult.toString());
+
+        System.out.println("\n\n\n\n");
 
         if (theBindingResult.hasErrors()) {
             return "customer-form";
